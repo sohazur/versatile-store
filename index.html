@@ -27,14 +27,17 @@
     <header></header>
     <main class="main">
       <div class="search-field">
-        <div class="search-box">
-          <input id="input-field" class="search-field" type="text" />
+        <div class="input-group mb-3 w-50 m-auto mt-5">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search..."
+            aria-label="Search"
+            aria-describedby="Search"
+          />
           <button
+            class="btn btn-primary btn-outline-primary text-white"
             type="button"
-            class="btn btn-primary search-button"
-            data-toggle="button"
-            aria-pressed="false"
-            autocomplete="off"
             id="search-btn"
             onclick="loadProducts()"
           >
