@@ -20,7 +20,7 @@ const showProducts = (products) => {
       <h2>Price: $ ${product.price}</h2>
       <p>Rating: ${product.rating.rate}/5 (${product.rating.count})</p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <button type="button" id="${product.id}" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="${product.description}">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
@@ -80,4 +80,14 @@ const updateTotal = () => {
   document.getElementById("total").innerText =
     parseFloat(grandTotal).toFixed(2);
 };
+
+// //detail button data load function
+// const detailLoad = (id) => {
+//   fetch(`https://fakestoreapi.com/products/${id}`)
+//     .then((res) => res.json())
+//     .then((data) => showDetail(data));
+// };
+
+// //detail button data show function
+// const showDetail = (data) => {};
 loadProducts();
