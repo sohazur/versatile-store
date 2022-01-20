@@ -1,3 +1,4 @@
+// Function for loading the products from API
 const loadProducts = () => {
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
@@ -25,6 +26,8 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+// Fucntion for updating the add to cart section's values
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -35,6 +38,7 @@ const addToCart = (id, price) => {
   updateTotal();
 };
 
+// Function for getting value from different ID in DOM
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
@@ -81,13 +85,4 @@ const updateTotal = () => {
     parseFloat(grandTotal).toFixed(2);
 };
 
-// //detail button data load function
-// const detailLoad = (id) => {
-//   fetch(`https://fakestoreapi.com/products/${id}`)
-//     .then((res) => res.json())
-//     .then((data) => showDetail(data));
-// };
-
-// //detail button data show function
-// const showDetail = (data) => {};
 loadProducts();
